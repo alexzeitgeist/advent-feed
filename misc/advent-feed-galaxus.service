@@ -1,0 +1,12 @@
+[Unit]
+Description=Galaxus Advent Calendar Feed
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/galaxus-advent-rss -store galaxus -port 8080 -cache 1h
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

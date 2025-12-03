@@ -1,0 +1,12 @@
+[Unit]
+Description=Digitec Advent Calendar Feed
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/galaxus-advent-rss -store digitec -port 8081 -cache 1h
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
